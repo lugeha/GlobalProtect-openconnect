@@ -38,6 +38,7 @@
           libsoup
           webkitgtk
           pkg-config
+          vpnc-scripts
         ];
 
         overrideMain = {...}: {
@@ -48,6 +49,9 @@
               --replace-fail /usr/bin/gpgui-helper $out/bin/gpgui-helper \
               --replace-fail /usr/bin/gpgui $out/bin/gpgui \
               --replace-fail /usr/bin/gpauth $out/bin/gpauth
+
+            substituteInPlace crates/common/src/vpn_utils.rs \
+              --replace-fail /usr/sbin/vpnc-script ${pkgs.vpnc-scripts}/bin/vpnc-script
           '';
         };
 

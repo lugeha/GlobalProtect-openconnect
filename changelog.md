@@ -1,5 +1,23 @@
 # Changelog
 
+## 2.3.7 - 2024-08-16
+
+- Fix the Rust type inference regression [issue in 1.80](https://github.com/rust-lang/rust/issues/125319).
+
+## 2.3.6 - 2024-08-15
+
+- CLI: enhance the `gpauth` command to support external browser authentication
+- CLI: add the `--cookie-on-stdin` option to support read the cookie from stdin
+- CLI: support usage: `gpauth <portal> --browser <browser> 2>/dev/null | sudo gpclient connect <portal> --cookie-on-stdin`
+- CLI: fix the `--browser <browser>` option not working
+
+## 2.3.5 - 2024-08-14
+
+- Support configure `no-dtls` option
+- GUI: fix the tray icon disk usage issue (#398)
+- CLI: support specify the browser with `--browser <browser>` option (#405, #407, #397)
+- CLI: fix the `--os` option not working
+
 ## 2.3.4 - 2024-07-08
 
 - Support the Internal Host Detection (fix [#377](https://github.com/yuezk/GlobalProtect-openconnect/issues/377))
